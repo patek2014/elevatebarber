@@ -341,8 +341,8 @@ function Index() {
       {/* FOOTER */}
       <footer className="border-t border-border py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Scissors className="w-4 h-4 text-gold" />
+          <div className="flex items-center gap-3">
+            <img src={logoAsset.url} alt="Elevated Barber Parkview" className="h-8 w-auto" />
             <span>© {new Date().getFullYear()} Elevated Barber Parkview. All rights reserved.</span>
           </div>
           <div className="flex items-center gap-1">
