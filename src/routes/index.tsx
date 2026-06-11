@@ -68,6 +68,26 @@ function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [form, setForm] = useState({ name: "", phone: "", service: "Signature Cut", date: "" });
   const [sent, setSent] = useState(false);
+  const [lightbox, setLightbox] = useState<number | null>(null);
+
+  const closeLightbox = useCallback(() => setLightbox(null), []);
+  const nextImg = useCallback(() => setLightbox(i => i === null ? i : (i + 1) % gallery.length), []);
+  const prevImg = useCallback(() => setLightbox(i => i === null ? i : (i - 1 + gallery.length) % gallery.length), []);
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") nextImg();
+      if (e.key === "ArrowLeft") prevImg();
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [lightbox, closeLightbox, nextImg, prevImg]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
