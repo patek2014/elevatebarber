@@ -384,6 +384,56 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* LIGHTBOX */}
+      {lightbox !== null && (
+        <div
+          className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-200"
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image gallery"
+        >
+          <button
+            onClick={closeLightbox}
+            className="absolute top-5 right-5 w-11 h-11 rounded-full bg-card/80 border border-border hover:border-gold/60 hover:bg-card flex items-center justify-center transition z-10"
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          <button
+            onClick={(e) => { e.stopPropagation(); prevImg(); }}
+            className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-card/80 border border-border hover:border-gold/60 hover:bg-card flex items-center justify-center transition z-10"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
+
+          <button
+            onClick={(e) => { e.stopPropagation(); nextImg(); }}
+            className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-card/80 border border-border hover:border-gold/60 hover:bg-card flex items-center justify-center transition z-10"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
+
+          <figure className="relative max-w-6xl max-h-full flex flex-col items-center gap-4" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={gallery[lightbox].src}
+              alt={gallery[lightbox].alt}
+              className="max-w-full max-h-[80vh] w-auto h-auto object-contain rounded-md shadow-luxe"
+            />
+            <figcaption className="text-sm text-muted-foreground flex items-center gap-3">
+              <span className="text-gold font-mono">{String(lightbox + 1).padStart(2, "0")}</span>
+              <span className="w-8 h-px bg-border" />
+              <span>{gallery[lightbox].alt}</span>
+              <span className="w-8 h-px bg-border" />
+              <span className="font-mono">{String(gallery.length).padStart(2, "0")}</span>
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </div>
   );
 }
