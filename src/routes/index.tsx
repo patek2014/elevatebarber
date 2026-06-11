@@ -283,11 +283,17 @@ function Index() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] md:auto-rows-[240px] gap-3">
             {gallery.map((g, i) => (
-              <div key={i} className={`relative overflow-hidden rounded-md group ${g.span}`}>
+              <button
+                key={i}
+                type="button"
+                onClick={() => setLightbox(i)}
+                className={`relative overflow-hidden rounded-md group cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-gold ${g.span}`}
+                aria-label={`View ${g.alt} larger`}
+              >
                 <img src={g.src} alt={g.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent opacity-0 group-hover:opacity-100 transition" />
                 <div className="absolute bottom-4 left-4 text-sm font-medium opacity-0 group-hover:opacity-100 transition">{g.alt}</div>
-              </div>
+              </button>
             ))}
           </div>
 
