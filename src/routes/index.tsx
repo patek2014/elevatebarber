@@ -47,12 +47,12 @@ const reasons = [
 ];
 
 const gallery = [
-  { src: g1, alt: "Hot towel shave", span: "md:col-span-2 md:row-span-2" },
-  { src: g4, alt: "Fresh fade portrait", span: "" },
-  { src: g2, alt: "Straight razor detail", span: "" },
-  { src: g3, alt: "Barbershop interior", span: "md:col-span-2" },
-  { src: g5, alt: "Hydra facial", span: "" },
-  { src: g6, alt: "Tools of the trade", span: "" },
+  { src: g1, alt: "The chair — gold detail", span: "md:col-span-2 md:row-span-2" },
+  { src: g4, alt: "Inside the shop", span: "" },
+  { src: g2, alt: "Twin gold barber chairs", span: "" },
+  { src: g3, alt: "Master barbers at work", span: "md:col-span-2" },
+  { src: g5, alt: "Precision cut in progress", span: "" },
+  { src: g6, alt: "Elevated Barber storefront", span: "" },
 ];
 
 const faqs = [
