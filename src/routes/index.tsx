@@ -31,12 +31,11 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: Scissors, name: "Signature Cut", desc: "Precision scissor & clipper craft, tailored to your face shape.", price: "From R280" },
-  { icon: Wind, name: "Hot Towel Shave", desc: "Steamed towels, hand-stropped straight razor, glass-smooth finish.", price: "From R220" },
-  { icon: Sparkles, name: "Hydra Facial", desc: "Deep cleanse, exfoliate, hydrate. Skin that looks like you slept.", price: "From R450" },
-  { icon: Hand, name: "Manicure & Pedicure", desc: "Quietly essential. Sharp hands, sharp impression.", price: "From R250" },
-  { icon: Award, name: "Beard Sculpt", desc: "Line work, wax, and hot oil treatment. Beard, perfected.", price: "From R180" },
-  { icon: Clock, name: "The Full Experience", desc: "Cut, shave, facial, mani — two hours that reset your week.", price: "From R890" },
+  { icon: Scissors, name: "Clipper Cut", desc: "Clean, sharp clipper work. In and out in 10 minutes looking fresh.", price: "R120", time: "10 min" },
+  { icon: Sparkles, name: "Kids Design", desc: "Fun, creative cuts and designs for the little ones.", price: "R50", time: "10 min" },
+  { icon: Award, name: "Haircut Kids / Students", desc: "Precision cut for kids and students. Same craft, smaller bill.", price: "R120", time: "10 min" },
+  { icon: Hand, name: "Haircut Pensioners", desc: "Respectful, refined grooming for our seasoned gentlemen.", price: "R120", time: "10 min" },
+  { icon: Wind, name: "Haircut Gents", desc: "The signature Elevated experience. Scissor and clipper mastery.", price: "R140", time: "10 min" },
 ];
 
 const reasons = [
@@ -66,7 +65,7 @@ const faqs = [
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [form, setForm] = useState({ name: "", phone: "", service: "Signature Cut", date: "" });
+  const [form, setForm] = useState({ name: "", phone: "", service: "Haircut Gents", date: "" });
   const [sent, setSent] = useState(false);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
@@ -156,7 +155,7 @@ function Index() {
               <div className="w-px bg-border" />
               <div><div className="font-display text-3xl text-gold-gradient font-bold">333+</div><div className="text-muted-foreground text-xs uppercase tracking-wider mt-1">Happy Clients</div></div>
               <div className="w-px bg-border" />
-              <div><div className="font-display text-3xl text-gold-gradient font-bold">10+</div><div className="text-muted-foreground text-xs uppercase tracking-wider mt-1">Services</div></div>
+              <div><div className="font-display text-3xl text-gold-gradient font-bold">5+</div><div className="text-muted-foreground text-xs uppercase tracking-wider mt-1">Services</div></div>
             </div>
           </div>
 
@@ -227,7 +226,7 @@ function Index() {
                   <div className="w-12 h-12 rounded-sm border border-gold/30 flex items-center justify-center group-hover:bg-gradient-gold group-hover:border-transparent transition">
                     <s.icon className="w-5 h-5 text-gold group-hover:text-primary-foreground transition" />
                   </div>
-                  <span className="text-xs font-mono text-muted-foreground">{s.price}</span>
+                  <span className="text-xs font-mono text-muted-foreground">{s.time} · {s.price}</span>
                 </div>
                 <h3 className="font-display text-2xl font-semibold mb-3">{s.name}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">{s.desc}</p>
