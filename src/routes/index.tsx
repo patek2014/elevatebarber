@@ -226,7 +226,7 @@ function Index() {
                   <div className="w-12 h-12 rounded-sm border border-gold/30 flex items-center justify-center group-hover:bg-gradient-gold group-hover:border-transparent transition">
                     <s.icon className="w-5 h-5 text-gold group-hover:text-primary-foreground transition" />
                   </div>
-                  <span className="text-xs font-mono text-muted-foreground">{s.price}</span>
+                  <span className="text-xs font-mono text-muted-foreground">{s.time} · {s.price}</span>
                 </div>
                 <h3 className="font-display text-2xl font-semibold mb-3">{s.name}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">{s.desc}</p>
