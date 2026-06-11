@@ -155,7 +155,7 @@ function Index() {
               <div className="w-px bg-border" />
               <div><div className="font-display text-3xl text-gold-gradient font-bold">333+</div><div className="text-muted-foreground text-xs uppercase tracking-wider mt-1">Happy Clients</div></div>
               <div className="w-px bg-border" />
-              <div><div className="font-display text-3xl text-gold-gradient font-bold">10+</div><div className="text-muted-foreground text-xs uppercase tracking-wider mt-1">Services</div></div>
+              <div><div className="font-display text-3xl text-gold-gradient font-bold">5+</div><div className="text-muted-foreground text-xs uppercase tracking-wider mt-1">Services</div></div>
             </div>
           </div>
 
