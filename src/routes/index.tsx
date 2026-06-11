@@ -225,8 +225,24 @@ function Index() {
             <p className="text-muted-foreground max-w-sm">From a quick precision cut to the two-hour full experience — every service is delivered with master-level care.</p>
           </div>
 
+          <div className="flex flex-wrap gap-3 mb-10">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2.5 rounded-sm text-sm font-medium border transition-all ${
+                  activeCategory === cat
+                    ? "bg-gradient-gold border-transparent text-primary-foreground shadow-gold"
+                    : "bg-card border-border hover:border-gold/40 text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-md overflow-hidden">
-            {services.map((s) => (
+            {filteredServices.map((s) => (
               <div key={s.name} className="group bg-card p-8 hover:bg-secondary transition-all duration-500 cursor-pointer relative">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-12 h-12 rounded-sm border border-gold/30 flex items-center justify-center group-hover:bg-gradient-gold group-hover:border-transparent transition">
