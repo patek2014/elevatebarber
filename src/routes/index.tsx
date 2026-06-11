@@ -30,12 +30,15 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const services = [
-  { icon: Scissors, name: "Clipper Cut", desc: "Clean, sharp clipper work. In and out in 10 minutes looking fresh.", price: "R120", time: "10 min" },
-  { icon: Sparkles, name: "Kids Design", desc: "Fun, creative cuts and designs for the little ones.", price: "R50", time: "10 min" },
-  { icon: Award, name: "Haircut Kids / Students", desc: "Precision cut for kids and students. Same craft, smaller bill.", price: "R120", time: "10 min" },
-  { icon: Hand, name: "Haircut Pensioners", desc: "Respectful, refined grooming for our seasoned gentlemen.", price: "R120", time: "10 min" },
-  { icon: Wind, name: "Haircut Gents", desc: "The signature Elevated experience. Scissor and clipper mastery.", price: "R140", time: "10 min" },
+const categories = ["Cuts & Hair", "Beards & Shaves", "Hands & Feet", "Facial Treatments"] as const;
+type Category = (typeof categories)[number];
+
+const services: { icon: typeof Scissors; name: string; desc: string; price: string; time: string; category: Category }[] = [
+  { icon: Scissors, name: "Clipper Cut", desc: "Clean, sharp clipper work. In and out in 10 minutes looking fresh.", price: "R120", time: "10 min", category: "Cuts & Hair" },
+  { icon: Sparkles, name: "Kids Design", desc: "Fun, creative cuts and designs for the little ones.", price: "R50", time: "10 min", category: "Cuts & Hair" },
+  { icon: Award, name: "Haircut Kids / Students", desc: "Precision cut for kids and students. Same craft, smaller bill.", price: "R120", time: "10 min", category: "Cuts & Hair" },
+  { icon: Hand, name: "Haircut Pensioners", desc: "Respectful, refined grooming for our seasoned gentlemen.", price: "R120", time: "10 min", category: "Cuts & Hair" },
+  { icon: Wind, name: "Haircut Gents", desc: "The signature Elevated experience. Scissor and clipper mastery.", price: "R140", time: "10 min", category: "Cuts & Hair" },
 ];
 
 const reasons = [
