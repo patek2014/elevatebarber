@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   Scissors, Sparkles, Hand, Wind, Award, Clock, MapPin, Phone,
   Star, Check, ChevronDown, Calendar, Instagram, ArrowRight, X, ChevronLeft, ChevronRight,
