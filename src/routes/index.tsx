@@ -4,13 +4,20 @@ import {
   Scissors, Sparkles, Hand, Wind, Award, Clock, MapPin, Phone,
   Star, Check, ChevronDown, Calendar, Instagram, ArrowRight,
 } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
+import heroAsset from "@/assets/real-unnamed_1.jpg.asset.json";
+import g1Asset from "@/assets/real-f.jpg.asset.json";
+import g2Asset from "@/assets/real-unnamed.jpg.asset.json";
+import g3Asset from "@/assets/real-unnamed_3.jpg.asset.json";
+import g4Asset from "@/assets/real-unnamed_4.jpg.asset.json";
+import g5Asset from "@/assets/real-unnamed_1.jpg.asset.json";
+import g6Asset from "@/assets/real-unnamed_2.jpg.asset.json";
+const heroImg = heroAsset.url;
+const g1 = g1Asset.url;
+const g2 = g2Asset.url;
+const g3 = g3Asset.url;
+const g4 = g4Asset.url;
+const g5 = g5Asset.url;
+const g6 = g6Asset.url;
 import logoAsset from "@/assets/elevated-barber-logo.webp.asset.json";
 
 export const Route = createFileRoute("/")({
