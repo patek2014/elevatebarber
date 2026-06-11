@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Scissors, Sparkles, Hand, Wind, Award, Clock, MapPin, Phone,
-  Star, Check, ChevronDown, Calendar, Instagram, ArrowRight,
+  Star, Check, ChevronDown, Calendar, Instagram, ArrowRight, X, ChevronLeft, ChevronRight,
 } from "lucide-react";
 import heroAsset from "@/assets/real-unnamed_1.jpg.asset.json";
 import g1Asset from "@/assets/real-f.jpg.asset.json";
