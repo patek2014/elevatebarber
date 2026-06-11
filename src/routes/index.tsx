@@ -65,7 +65,7 @@ const faqs = [
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [form, setForm] = useState({ name: "", phone: "", service: "Signature Cut", date: "" });
+  const [form, setForm] = useState({ name: "", phone: "", service: "Haircut Gents", date: "" });
   const [sent, setSent] = useState(false);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
