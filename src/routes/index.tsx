@@ -71,6 +71,9 @@ function Index() {
   const [form, setForm] = useState({ name: "", phone: "", service: "Haircut Gents", date: "" });
   const [sent, setSent] = useState(false);
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState<Category>("Cuts & Hair");
+
+  const filteredServices = services.filter(s => s.category === activeCategory);
 
   const closeLightbox = useCallback(() => setLightbox(null), []);
   const nextImg = useCallback(() => setLightbox(i => i === null ? i : (i + 1) % gallery.length), []);
