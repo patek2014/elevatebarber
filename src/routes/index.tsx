@@ -30,12 +30,15 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const services = [
-  { icon: Scissors, name: "Clipper Cut", desc: "Clean, sharp clipper work. In and out in 10 minutes looking fresh.", price: "R120", time: "10 min" },
-  { icon: Sparkles, name: "Kids Design", desc: "Fun, creative cuts and designs for the little ones.", price: "R50", time: "10 min" },
-  { icon: Award, name: "Haircut Kids / Students", desc: "Precision cut for kids and students. Same craft, smaller bill.", price: "R120", time: "10 min" },
-  { icon: Hand, name: "Haircut Pensioners", desc: "Respectful, refined grooming for our seasoned gentlemen.", price: "R120", time: "10 min" },
-  { icon: Wind, name: "Haircut Gents", desc: "The signature Elevated experience. Scissor and clipper mastery.", price: "R140", time: "10 min" },
+const categories = ["Cuts & Hair", "Beards & Shaves", "Hands & Feet", "Facial Treatments"] as const;
+type Category = (typeof categories)[number];
+
+const services: { icon: typeof Scissors; name: string; desc: string; price: string; time: string; category: Category }[] = [
+  { icon: Scissors, name: "Clipper Cut", desc: "Clean, sharp clipper work. In and out in 10 minutes looking fresh.", price: "R120", time: "10 min", category: "Cuts & Hair" },
+  { icon: Sparkles, name: "Kids Design", desc: "Fun, creative cuts and designs for the little ones.", price: "R50", time: "10 min", category: "Cuts & Hair" },
+  { icon: Award, name: "Haircut Kids / Students", desc: "Precision cut for kids and students. Same craft, smaller bill.", price: "R120", time: "10 min", category: "Cuts & Hair" },
+  { icon: Hand, name: "Haircut Pensioners", desc: "Respectful, refined grooming for our seasoned gentlemen.", price: "R120", time: "10 min", category: "Cuts & Hair" },
+  { icon: Wind, name: "Haircut Gents", desc: "The signature Elevated experience. Scissor and clipper mastery.", price: "R140", time: "10 min", category: "Cuts & Hair" },
 ];
 
 const reasons = [
@@ -68,6 +71,9 @@ function Index() {
   const [form, setForm] = useState({ name: "", phone: "", service: "Haircut Gents", date: "" });
   const [sent, setSent] = useState(false);
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState<Category>("Cuts & Hair");
+
+  const filteredServices = services.filter(s => s.category === activeCategory);
 
   const closeLightbox = useCallback(() => setLightbox(null), []);
   const nextImg = useCallback(() => setLightbox(i => i === null ? i : (i + 1) % gallery.length), []);
@@ -219,8 +225,24 @@ function Index() {
             <p className="text-muted-foreground max-w-sm">From a quick precision cut to the two-hour full experience — every service is delivered with master-level care.</p>
           </div>
 
+          <div className="flex flex-wrap gap-3 mb-10">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2.5 rounded-sm text-sm font-medium border transition-all ${
+                  activeCategory === cat
+                    ? "bg-gradient-gold border-transparent text-primary-foreground shadow-gold"
+                    : "bg-card border-border hover:border-gold/40 text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-md overflow-hidden">
-            {services.map((s) => (
+            {filteredServices.map((s) => (
               <div key={s.name} className="group bg-card p-8 hover:bg-secondary transition-all duration-500 cursor-pointer relative">
                 <div className="flex items-start justify-between mb-6">
                   <div className="w-12 h-12 rounded-sm border border-gold/30 flex items-center justify-center group-hover:bg-gradient-gold group-hover:border-transparent transition">
