@@ -310,13 +310,28 @@ function Index() {
 
       {/* WHY US */}
       <section id="why" className="py-28 px-6 bg-secondary/40 grain-overlay">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-5">
-            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">— Why Elevated</div>
-            <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-6">
-              We're not the<br />cheapest barber.<br />
-              <span className="italic text-gold-gradient">We're the best one.</span>
-            </h2>
+  <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
+    <div className="lg:col-span-5">
+      <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">— Why Elevated</div>
+
+      <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-6">
+        Average is everywhere.<br />
+        Excellence is rare.
+      </h2>
+
+      <p className="text-muted-foreground leading-relaxed mb-8">
+        At Elevate, every detail is intentional — from the precision of each cut to the atmosphere,
+        service, and craftsmanship that define the experience. We don't believe a barbershop visit
+        should feel routine. It should feel exceptional.
+
+        <br /><br />
+
+        Discover the four qualities that set us apart, keep our appointment book filled weeks in advance,
+        and turn first-time visitors into lifelong clients.
+      </p>
+    </div>
+  </div>
+</section>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Four reasons our chairs are booked out weeks in advance — and why our clients
               don't go anywhere else once they sit in one.
