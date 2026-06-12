@@ -4,13 +4,19 @@ import {
   Scissors, Sparkles, Hand, Wind, Award, Clock, MapPin, Phone,
   Star, Check, ChevronDown, Calendar, Instagram, ArrowRight, X, ChevronLeft, ChevronRight,
 } from "lucide-react";
-import heroAsset from "@/assets/real-unnamed_1.jpg.asset.json";
-import g1Asset from "@/assets/real-f.jpg.asset.json";
-import g2Asset from "@/assets/real-unnamed.jpg.asset.json";
-import g3Asset from "@/assets/real-unnamed_3.jpg.asset.json";
-import g4Asset from "@/assets/real-unnamed_4.jpg.asset.json";
-import g5Asset from "@/assets/real-unnamed_1.jpg.asset.json";
-import g6Asset from "@/assets/real-unnamed_2.jpg.asset.json";
+import heroAsset from "@/assets/toned-3.jpg.asset.json";
+import g1Asset from "@/assets/toned-1.jpg.asset.json";
+import g2Asset from "@/assets/toned-2.jpg.asset.json";
+import g3Asset from "@/assets/toned-5.jpg.asset.json";
+import g4Asset from "@/assets/toned-4.jpg.asset.json";
+import g5Asset from "@/assets/toned-3.jpg.asset.json";
+import g6Asset from "@/assets/toned-6.jpg.asset.json";
+import teamAngelo from "@/assets/team-angelo.jpg.asset.json";
+import teamMpeo from "@/assets/team-mpeo.jpg.asset.json";
+import teamNazley from "@/assets/team-nazley.jpg.asset.json";
+import teamAhmad from "@/assets/team-ahmad.jpg.asset.json";
+import teamOsama from "@/assets/team-osama.jpg.asset.json";
+import teamAlan from "@/assets/team-alan.jpg.asset.json";
 const heroImg = heroAsset.url;
 const g1 = g1Asset.url;
 const g2 = g2Asset.url;
@@ -19,6 +25,15 @@ const g4 = g4Asset.url;
 const g5 = g5Asset.url;
 const g6 = g6Asset.url;
 import logoAsset from "@/assets/elevated-barber-logo.webp.asset.json";
+
+const team = [
+  { name: "Angelo", role: "Master Barber", rating: 5.0, photo: teamAngelo.url },
+  { name: "Mpeo", role: "Therapist", rating: 5.0, photo: teamMpeo.url },
+  { name: "Nazley", role: "Facial Therapist", rating: 5.0, photo: teamNazley.url },
+  { name: "Ahmad", role: "Master Barber", rating: 5.0, photo: teamAhmad.url },
+  { name: "Osama", role: "Master Barber", rating: 5.0, photo: teamOsama.url },
+  { name: "Alan", role: "Master Barber", rating: 4.9, photo: teamAlan.url },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -143,6 +158,8 @@ function Index() {
             <a href="#services" className="hover:text-primary transition">Services</a>
             <a href="#why" className="hover:text-primary transition">Why Us</a>
             <a href="#gallery" className="hover:text-primary transition">Gallery</a>
+            <a href="#team" className="hover:text-primary transition">Team</a>
+            <a href="#about" className="hover:text-primary transition">About</a>
             <a href="#faq" className="hover:text-primary transition">FAQ</a>
           </div>
           <a href="tel:+27100852224" className="px-5 py-2.5 bg-gradient-gold text-primary-foreground font-medium text-sm rounded-sm hover:scale-105 transition-transform shadow-gold">
@@ -352,6 +369,80 @@ function Index() {
             <a href="https://instagram.com/elevatedbarber_parkview" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition">
               <Instagram className="w-4 h-4" /> @elevatedbarber_parkview
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* TEAM */}
+      <section id="team" className="py-28 px-6 bg-secondary/40 grain-overlay">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">— The Craftsmen</div>
+            <h2 className="font-display text-4xl md:text-6xl font-bold">Meet the <span className="italic text-gold-gradient">Elevated</span> team.</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto mt-4">Hand-picked masters of their craft. Every chair, every face, in expert hands.</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {team.map((m) => (
+              <div key={m.name} className="group relative overflow-hidden rounded-md border border-border bg-card hover:border-gold/50 transition-all">
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img src={m.photo} alt={`${m.name} — ${m.role} at Elevated Barber`} loading="lazy" width={768} height={960} className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent pointer-events-none" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="flex items-end justify-between gap-3">
+                    <div>
+                      <h3 className="font-display text-2xl font-semibold leading-tight">{m.name}</h3>
+                      <p className="text-sm text-gold mt-1">{m.role}</p>
+                    </div>
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-gold/40 bg-background/70 backdrop-blur">
+                      <Star className="w-3.5 h-3.5 fill-gold text-gold" />
+                      <span className="text-xs font-mono">{m.rating.toFixed(1)}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="py-28 px-6 relative">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5">
+            <div className="relative rounded-md overflow-hidden border border-border shadow-luxe">
+              <img src={g2} alt="Inside Elevated Barber Parkview" loading="lazy" className="w-full h-auto object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-background/40 via-transparent to-transparent pointer-events-none" />
+            </div>
+          </div>
+          <div className="lg:col-span-7">
+            <div className="text-xs uppercase tracking-[0.3em] text-gold mb-4">— About Elevated</div>
+            <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-8">
+              A grooming ritual,<br /><span className="italic text-gold-gradient">refined</span> in every detail.
+            </h2>
+            <div className="space-y-5 text-muted-foreground leading-relaxed">
+              <p>
+                Tucked into Parkview Centre in the heart of Randburg, Elevated Barber is where classic
+                barbering meets a modern, refined ritual. Every cut, shave and treatment is delivered
+                by master craftsmen — precision shaped to your style, finished with the kind of detail
+                only true expertise can offer.
+              </p>
+              <p>
+                Step inside and the world slows down. Warm light, gold accents, the quiet confidence of
+                a chair that's been waiting for you. From a sharp signature cut to a hot towel shave or
+                a full grooming experience, you don't just leave looking your best — you leave feeling
+                <span className="text-gold"> Elevated</span>.
+              </p>
+            </div>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a href="#contact" className="px-6 py-3 bg-gradient-gold text-primary-foreground font-semibold rounded-sm shadow-gold hover:scale-[1.02] transition inline-flex items-center gap-2">
+                Book Your Chair <ArrowRight className="w-4 h-4" />
+              </a>
+              <a href="#team" className="px-6 py-3 border border-border hover:border-gold/60 transition rounded-sm font-medium inline-flex items-center gap-2">
+                Meet the team
+              </a>
+            </div>
           </div>
         </div>
       </section>
