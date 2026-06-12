@@ -34,11 +34,41 @@ const categories = ["Cuts & Hair", "Beards & Shaves", "Hands & Feet", "Facial Tr
 type Category = (typeof categories)[number];
 
 const services: { icon: typeof Scissors; name: string; desc: string; price: string; time: string; category: Category }[] = [
-  { icon: Scissors, name: "Clipper Cut", desc: "Clean, sharp clipper work. In and out in 10 minutes looking fresh.", price: "R120", time: "10 min", category: "Cuts & Hair" },
-  { icon: Sparkles, name: "Kids Design", desc: "Fun, creative cuts and designs for the little ones.", price: "R50", time: "10 min", category: "Cuts & Hair" },
+  // Cuts & Hair
+  { icon: Wind, name: "Haircut Gents", desc: "The signature Elevated experience. Scissor and clipper mastery.", price: "R140", time: "10 min", category: "Cuts & Hair" },
+  { icon: Scissors, name: "Designer", desc: "Custom designer cut tailored to your style.", price: "R190", time: "10 min", category: "Cuts & Hair" },
+  { icon: Scissors, name: "Fade", desc: "Crisp, seamless fade — skin, low, mid or high.", price: "R190", time: "15 min", category: "Cuts & Hair" },
+  { icon: Scissors, name: "Scissor Cut", desc: "Full scissor work for texture and finesse.", price: "R190", time: "15 min", category: "Cuts & Hair" },
+  { icon: Scissors, name: "Flat Top", desc: "Classic flat top, sharply shaped.", price: "R190", time: "10 min", category: "Cuts & Hair" },
+  { icon: Scissors, name: "Clipper Cut", desc: "Clean, sharp clipper work. In and out looking fresh.", price: "R120", time: "10 min", category: "Cuts & Hair" },
   { icon: Award, name: "Haircut Kids / Students", desc: "Precision cut for kids and students. Same craft, smaller bill.", price: "R120", time: "10 min", category: "Cuts & Hair" },
   { icon: Hand, name: "Haircut Pensioners", desc: "Respectful, refined grooming for our seasoned gentlemen.", price: "R120", time: "10 min", category: "Cuts & Hair" },
-  { icon: Wind, name: "Haircut Gents", desc: "The signature Elevated experience. Scissor and clipper mastery.", price: "R140", time: "10 min", category: "Cuts & Hair" },
+  { icon: Sparkles, name: "Kids Design", desc: "Fun, creative cuts and designs for the little ones.", price: "R50", time: "10 min", category: "Cuts & Hair" },
+  { icon: Sparkles, name: "Hair Relaxer", desc: "Smooth, manageable finish with a professional relaxer.", price: "R250", time: "20 min", category: "Cuts & Hair" },
+  { icon: Award, name: "Special (Hair & Beard)", desc: "Full cut plus beard sculpt — the complete package.", price: "R280", time: "20 min", category: "Cuts & Hair" },
+
+  // Beards & Shaves
+  { icon: Scissors, name: "Beard Trim", desc: "Sharp lines, even length, clean finish.", price: "R50", time: "10 min", category: "Beards & Shaves" },
+  { icon: Sparkles, name: "Beard Colouring", desc: "Rich, natural beard colour to refresh your look.", price: "R150", time: "20 min", category: "Beards & Shaves" },
+  { icon: Wind, name: "Hot Towel Shave", desc: "The full ritual — hot towel, oils, straight razor finish.", price: "R140", time: "15 min", category: "Beards & Shaves" },
+
+  // Hands & Feet
+  { icon: Hand, name: "Gloss Guard / Polish", desc: "Nail polish application for a clean, glossy finish.", price: "R80", time: "10 min", category: "Hands & Feet" },
+  { icon: Hand, name: "Little Luxe Pedicure (Boys or Girls)", desc: "Clip, file, cuticle work, buff and shine.", price: "R120", time: "20 min", category: "Hands & Feet" },
+  { icon: Hand, name: "Little Luxe Manicure (Boys or Girls)", desc: "Clip, file, cuticle work, buff and shine.", price: "R110", time: "20 min", category: "Hands & Feet" },
+  { icon: Hand, name: "The Soft Groom Pedicure", desc: "Soak and massage, clip, cuticle work, buff and shine.", price: "R350", time: "25 min", category: "Hands & Feet" },
+  { icon: Hand, name: "Power Groom Pedicure", desc: "Clip, file, cuticle work, buff and shine.", price: "R210", time: "20 min", category: "Hands & Feet" },
+  { icon: Hand, name: "The Soft Groom Manicure", desc: "Soak and massage, clip, cuticle work, buff and shine.", price: "R300", time: "25 min", category: "Hands & Feet" },
+  { icon: Hand, name: "Power Groom Manicure", desc: "Clip, file, cuticle work, buff and shine.", price: "R200", time: "20 min", category: "Hands & Feet" },
+
+  // Facial Treatments
+  { icon: Sparkles, name: "Facial Cleanse & Steam", desc: "Deep cleanse and steam to refresh and renew.", price: "R150", time: "30 min", category: "Facial Treatments" },
+  { icon: Sparkles, name: "Elevated Wax / Threading", desc: "Includes nose, ear and face wax.", price: "R200", time: "20 min", category: "Facial Treatments" },
+  { icon: Sparkles, name: "Eyebrow Wax & Tint", desc: "Shape and tint for a defined brow.", price: "R150", time: "20 min", category: "Facial Treatments" },
+  { icon: Sparkles, name: "Eyebrow Wax / Threading", desc: "Clean, shaped brows.", price: "R100", time: "10 min", category: "Facial Treatments" },
+  { icon: Sparkles, name: "Cheek Wax / Threading", desc: "Smooth cheeks, sharp finish.", price: "R70", time: "10 min", category: "Facial Treatments" },
+  { icon: Sparkles, name: "Nose Wax", desc: "Quick, comfortable nose wax.", price: "R50", time: "10 min", category: "Facial Treatments" },
+  { icon: Sparkles, name: "Ear Wax", desc: "Quick ear wax for a polished finish.", price: "R50", time: "10 min", category: "Facial Treatments" },
 ];
 
 const reasons = [
