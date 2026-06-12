@@ -4,13 +4,19 @@ import {
   Scissors, Sparkles, Hand, Wind, Award, Clock, MapPin, Phone,
   Star, Check, ChevronDown, Calendar, Instagram, ArrowRight, X, ChevronLeft, ChevronRight,
 } from "lucide-react";
-import heroAsset from "@/assets/real-unnamed_1.jpg.asset.json";
-import g1Asset from "@/assets/real-f.jpg.asset.json";
-import g2Asset from "@/assets/real-unnamed.jpg.asset.json";
-import g3Asset from "@/assets/real-unnamed_3.jpg.asset.json";
-import g4Asset from "@/assets/real-unnamed_4.jpg.asset.json";
-import g5Asset from "@/assets/real-unnamed_1.jpg.asset.json";
-import g6Asset from "@/assets/real-unnamed_2.jpg.asset.json";
+import heroAsset from "@/assets/toned-3.jpg.asset.json";
+import g1Asset from "@/assets/toned-1.jpg.asset.json";
+import g2Asset from "@/assets/toned-2.jpg.asset.json";
+import g3Asset from "@/assets/toned-5.jpg.asset.json";
+import g4Asset from "@/assets/toned-4.jpg.asset.json";
+import g5Asset from "@/assets/toned-3.jpg.asset.json";
+import g6Asset from "@/assets/toned-6.jpg.asset.json";
+import teamAngelo from "@/assets/team-angelo.jpg.asset.json";
+import teamMpeo from "@/assets/team-mpeo.jpg.asset.json";
+import teamNazley from "@/assets/team-nazley.jpg.asset.json";
+import teamAhmad from "@/assets/team-ahmad.jpg.asset.json";
+import teamOsama from "@/assets/team-osama.jpg.asset.json";
+import teamAlan from "@/assets/team-alan.jpg.asset.json";
 const heroImg = heroAsset.url;
 const g1 = g1Asset.url;
 const g2 = g2Asset.url;
@@ -19,6 +25,15 @@ const g4 = g4Asset.url;
 const g5 = g5Asset.url;
 const g6 = g6Asset.url;
 import logoAsset from "@/assets/elevated-barber-logo.webp.asset.json";
+
+const team = [
+  { name: "Angelo", role: "Master Barber", rating: 5.0, photo: teamAngelo.url },
+  { name: "Mpeo", role: "Therapist", rating: 5.0, photo: teamMpeo.url },
+  { name: "Nazley", role: "Facial Therapist", rating: 5.0, photo: teamNazley.url },
+  { name: "Ahmad", role: "Master Barber", rating: 5.0, photo: teamAhmad.url },
+  { name: "Osama", role: "Master Barber", rating: 5.0, photo: teamOsama.url },
+  { name: "Alan", role: "Master Barber", rating: 4.9, photo: teamAlan.url },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -143,6 +158,8 @@ function Index() {
             <a href="#services" className="hover:text-primary transition">Services</a>
             <a href="#why" className="hover:text-primary transition">Why Us</a>
             <a href="#gallery" className="hover:text-primary transition">Gallery</a>
+            <a href="#team" className="hover:text-primary transition">Team</a>
+            <a href="#about" className="hover:text-primary transition">About</a>
             <a href="#faq" className="hover:text-primary transition">FAQ</a>
           </div>
           <a href="tel:+27100852224" className="px-5 py-2.5 bg-gradient-gold text-primary-foreground font-medium text-sm rounded-sm hover:scale-105 transition-transform shadow-gold">
