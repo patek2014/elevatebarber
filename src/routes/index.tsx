@@ -195,8 +195,11 @@ function Index() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <a href="#contact" className="group px-7 py-4 bg-gradient-gold text-primary-foreground font-semibold rounded-sm shadow-gold hover:scale-[1.02] transition-all inline-flex items-center gap-2">
-                Book Your Chair <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+              <a href="#services" className="group px-7 py-4 bg-gradient-gold text-primary-foreground font-semibold rounded-sm shadow-gold hover:scale-[1.02] transition-all inline-flex items-center gap-2">
+                View Services <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+              </a>
+              <a href="#contact" className="px-7 py-4 border border-border hover:border-gold/60 hover:bg-card/50 transition rounded-sm font-medium inline-flex items-center gap-2">
+                <Calendar className="w-4 h-4" /> Book Your Chair
               </a>
               <a href="tel:+27100852224" className="px-7 py-4 border border-border hover:border-gold/60 hover:bg-card/50 transition rounded-sm font-medium inline-flex items-center gap-2">
                 <Phone className="w-4 h-4" /> 010 085 2224
