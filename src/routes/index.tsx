@@ -536,9 +536,20 @@ function Index() {
             <img src={logoAsset.url} alt="Elevated Barber Parkview" className="h-8 w-auto" />
             <span>© {new Date().getFullYear()} Elevated Barber Parkview. All rights reserved.</span>
           </div>
-          <div className="flex items-center gap-1">
-            {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-gold text-gold" />)}
-            <span className="ml-2">5.0 · 333 reviews</span>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/elevatedbarber_parkview/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Elevated Barber on Instagram"
+              className="inline-flex items-center gap-2 px-4 py-2 border border-border hover:border-gold/60 rounded-sm font-medium transition hover:text-gold"
+            >
+              <Instagram className="w-4 h-4" /> Instagram
+            </a>
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-gold text-gold" />)}
+              <span className="ml-2">5.0 · 333 reviews</span>
+            </div>
           </div>
         </div>
       </footer>
