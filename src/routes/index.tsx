@@ -256,6 +256,14 @@ function Index() {
                   <button type="submit" className="w-full mt-2 py-4 bg-gradient-gold text-primary-foreground font-semibold rounded-sm shadow-gold hover:scale-[1.01] transition inline-flex items-center justify-center gap-2">
                     <Calendar className="w-4 h-4" /> Request Booking
                   </button>
+                  <a
+                    href="https://www.instagram.com/elevatedbarber_parkview/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 border border-border hover:border-gold/60 rounded-sm font-medium inline-flex items-center justify-center gap-2 transition hover:text-gold"
+                  >
+                    <Instagram className="w-4 h-4" /> Book via Instagram
+                  </a>
                   <p className="text-[11px] text-muted-foreground text-center">By booking you agree to our cancellation policy.</p>
                 </form>
               )}
